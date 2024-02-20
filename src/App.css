@@ -150,7 +150,7 @@ a {
 }
 
 .favourite-btn {
-  width: 250px;
+  width: 15rem;
   background-color: black;
   color: white;
   padding: 0.5rem 1rem;
@@ -182,4 +182,68 @@ a {
 
 .loading {
   color: black;
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 12px;
+  }
+  .image img {
+    width: 200px;
+    height: 150px;
+  }
+
+  .search {
+    input {
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .image img {
+    width: 150px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .image img {
+    width: 200px;
+    height: 150px;
+  }
+
+  .search {
+    input {
+      width: 250px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .image img {
+    width: 150px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .image img {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .search {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    input {
+      width: 200px;
+    }
+  }
+  .menu-container {
+    margin-top: 6rem;
+  }
 }
