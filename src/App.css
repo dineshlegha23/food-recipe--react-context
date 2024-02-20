@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: antiquewhite;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+button:hover {
+  background-color: rgb(58, 58, 58);
+}
+
+.navbar {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1rem;
+}
+
+.search {
+  input {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px -5px rgba(255, 0, 0, 0.281);
+    border: 0;
+
+    &:focus,
+    &:active {
+      outline: transparent;
+    }
+  }
+}
+
+.link {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+  .search {
+    input {
+      width: 600px;
+      padding: 1rem 2rem;
+    }
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    font-size: 1.5rem;
+  }
+}
+
+.menu-container {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.menu-item {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.329);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.image img {
+  cursor: pointer;
+  border-radius: 20px;
+  width: 250px;
+  height: 200px;
+  transition: all 0.3s;
+
+  &:hover {
+    scale: 1.1;
+  }
+}
+
+.title {
+  max-width: 200px;
+}
+
+.publisher {
+  color: blueviolet;
+}
+
+a {
+  text-decoration: none;
+}
+
+.recipe-detail-btn {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 0;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 1rem;
+
+  a {
+    color: white;
+  }
+}
+
+.recipe {
+  margin-top: 2rem;
+  padding: 2rem;
+  display: flex;
+
+  img {
+    width: auto;
+    height: auto;
+    max-height: 500px;
+    max-width: 500px;
+    cursor: default;
+
+    &:hover {
+      scale: 1;
+    }
+  }
+}
+
+.recipe-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0rem 3rem;
+}
+
+.favourite-btn {
+  width: 250px;
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-block: 0.5rem;
+}
+
+.ingredients {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.error,
+.loading,
+.empty {
+  font-weight: 900;
+  font-size: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+.loading {
+  color: black;
+}
