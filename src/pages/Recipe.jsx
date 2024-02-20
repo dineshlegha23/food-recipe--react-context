@@ -5,7 +5,6 @@ import { useRecipeContext } from "../context/context";
 const Recipe = () => {
   const { setFavourites, favourites } = useRecipeContext();
   const params = useParams();
-
   const [recipe, setRecipe] = useState([]);
   const [added, setAdded] = useState(
     favourites?.find((item) => item.id === params.id)

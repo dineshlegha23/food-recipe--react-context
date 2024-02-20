@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import MenuList from "../components/MenuList";
-import { useNavigate } from "react-router-dom";
 import { useRecipeContext } from "../context/context";
 
 const Homepage = () => {
   const { recipes, setRecipes, search } = useRecipeContext();
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
   const fetchData = async () => {
     try {
       setLoading(true);
@@ -17,7 +14,6 @@ const Homepage = () => {
       );
       const data = await response.json();
       setRecipes(data.data.recipes);
-      navigate("/");
       setLoading(false);
     } catch (error) {
       setLoading(false);
