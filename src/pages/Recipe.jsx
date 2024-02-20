@@ -5,19 +5,26 @@ import { useRecipeContext } from "../context/context";
 const Recipe = () => {
   const { setFavourites, favourites } = useRecipeContext();
   const params = useParams();
+
   const [recipe, setRecipe] = useState([]);
   const [added, setAdded] = useState(
     favourites?.find((item) => item.id === params.id)
   );
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const fetchData = async () => {
     try {
+      setLoading(true);
       const response = await fetch(
         `https://forkify-api.herokuapp.com/api/v2/recipes/${params.id}`
       );
       const data = await response.json();
       setRecipe(data.data.recipe);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
+      setError(true);
       console.log(error);
     }
   };
@@ -25,8 +32,6 @@ const Recipe = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
-  console.log(favourites);
 
   useEffect(() => {
     localStorage.setItem("favourites", JSON.stringify(favourites));
@@ -48,6 +53,14 @@ const Recipe = () => {
         );
     setAdded(!added);
   };
+
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="error">Error: Something went wrong</div>;
+  }
 
   return (
     <div className="recipe">

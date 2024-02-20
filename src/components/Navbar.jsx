@@ -20,9 +20,6 @@ const Navbar = () => {
       </div>
       <ul className="nav-links">
         <li className="link">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="link">
           <Link to="/favourites">
             Favourites {favourites.length > 0 ? favourites.length : ""}
           </Link>
